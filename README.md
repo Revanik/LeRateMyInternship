@@ -3,4 +3,4 @@
 **Team:** Lebron
 
 **Members:**
-Ryan Evanik, Owen Latt
+Ryan Evanik, Owen Latt, Liana Karim
