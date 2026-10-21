@@ -39,7 +39,7 @@ MVP: yes
 -[] The student can post their updated version of the review.  
 
 ## US5 Flag Review:
-As a student, I want to flag a review based on accuracy and helpfulness to allow myself and other students to track the most helpful reviews.
+As a student, I want to flag a review based on accuracy and helpfulness to allow myself and other students to track the most helpful reviews.  
 FR: FR10  
 Priority: Should  
 MVP: no  
