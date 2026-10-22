@@ -1,4 +1,4 @@
-# E1 Internship Reviews and Moderation
+# E1 Internship Reviewing and Moderating:
 Students can create and interact with internship reviews.
 
 ## US1 Create Account:
@@ -47,7 +47,7 @@ MVP: no
 -[] The student can flag a review based on whether the review was accurate and helpful.  
 -[] The system displays that the review is flagged as accurate and helpful
 
-# E2 Searching for Internships:
+# E2 Internship Searching:
 Students can search for internships in ways they personally desire.
 
 ## US6 Browse Reviews: 
