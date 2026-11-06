@@ -10,19 +10,28 @@ We plan to build our system using Java 25 and Spring Boot for the backend, Thyme
 
 Software Needed
 1. Git: 
-    a. Check with [git --version] in the command prompt
-    b. Should get git version 2.4X.X.
-    c. Visit https://git-scm.com/install/ if needed
 
-2. JDK (Java):
-    a. Check with [java --version]
-    b. Should get java 25...
-    c. Visit https://www.oracle.com/java/technologies/javase/jdk25-archive-downloads.html if needed
+   a. Check with [git --version] in the command prompt
 
-3. Postgres
-    a. Check with [psql --version] or try to open SQL Shell (psql)
-    b. Should get psql 18.X
-    c. Visit https://www.postgresql.org/download/ if needed
+   b. Should get git version 2.4X.X.
+
+   c. Visit https://git-scm.com/install/ if needed
+
+3. JDK (Java):
+
+   a. Check with [java --version]
+
+   b. Should get java 25...
+
+   c. Visit https://www.oracle.com/java/technologies/javase/jdk25-archive-downloads.html if needed
+
+5. Postgres
+
+   a. Check with [psql --version] or try to open SQL Shell (psql)
+
+   b. Should get psql 18.X
+
+   c. Visit https://www.postgresql.org/download/ if needed
 
 Database Setup
 1. Open SQl Shell (psql)
@@ -45,9 +54,14 @@ Searching and Filtering -> search
 Moderation and Verification -> moderation
 User Interface controllers, shared code -> common
 
-How the project is organized. Everything lives under src/. The backend is Java in src/main/java/internshipnetwork/, split into packages that match our subsystems (account, review, internship, search, moderation, and common). 
+How the project is organized. Everything lives under src/. The backend is Java in src/main/java/internshipnetwork/, split into packages that match our subsystems (account, review, internship, search, moderation, and common).
+
 Each package holds the controllers (which handle web requests), services (the business logic) and repositories (which read and write the database) for that feature. Each package contains everything its feature needs, and not much else. 
+
 The frontend is in src/main/resources/: Thymeleaf HTML pages go in templates/, and plain CSS and JavaScript go in static/css/ and static/js/. A controller returns a template’s name, and Spring fills it in with data and sends it to the browser. 
+
 The database is PostgreSQL, running on your own machine. Its connection settings are in src/main/resources/application.yml, and its tables are created by numbered SQL files in src/main/resources/db/migration/ (V1__...sql, V2__...sql), which run automatically when the app starts. 
+
 Tests go in src/test/java/, mirroring the main folder structure. 
+
 The build is configured in pom.xml and run with the included Maven wrapper (mvnw), so nobody needs to install Maven.
