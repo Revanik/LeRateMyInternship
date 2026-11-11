@@ -65,3 +65,6 @@ The database is PostgreSQL, running on your own machine. Its connection settings
 Tests go in src/test/java/, mirroring the main folder structure. 
 
 The build is configured in pom.xml and run with the included Maven wrapper (mvnw), so nobody needs to install Maven.
+
+Diagram:
+![DeploymentDiagram](images\DeploymentDiagram.png)
