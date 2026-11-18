@@ -5,6 +5,10 @@
 **Members:**
 Ryan Evanik, Owen Latt, Aaron Zheng, Liana Karim, Luke Simpson
 
+*** New Run with the docker file ***
+Install docker desktop: https://www.docker.com/products/docker-desktop/
+In powershell run: docker compose up --build
+Open http://localhost:8080. Stop with Ctrl+C, then `docker compose down`
 
 We plan to build our system using Java 25 and Spring Boot for the backend, Thymeleaf with HTML, CSS, and JavaScript for the frontend, and PostgreSQL for the database. One thing we are unsure about is how to verify that reviewers’ work email addresses are legitimate and confirm that they actually worked at the company they are reviewing.
 
