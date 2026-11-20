@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('My account')}"></head>
+
+<body>
+    <header th:replace="~{fragments/header :: header}"></header>
+
+    <main>
+        <section class="auth-card">
+            <h1>My account</h1>
+            <p>Signed in as <strong th:text="${email}">student@example.com</strong></p>
+            <p class="form-hint">Your posted reviews and saved internships will show up here as those features are added.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>LeRateMyInternship</p>
+    </footer>
+</body>
+</html>
