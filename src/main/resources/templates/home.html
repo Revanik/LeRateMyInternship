@@ -3,17 +3,7 @@
 <head th:replace="~{fragments/layout :: head(${appName})}"></head>
 
 <body>
-    <header class="site-header">
-        <nav class="navbar" aria-label="Main navigation">
-            <a class="logo" th:href="@{/}">LeRateMyInternship</a>
-
-            <div class="nav-links">
-                <a th:href="@{/}">Home</a>
-                <a th:href="@{/reviews}">Reviews</a>
-                <a href="#about">About</a>
-            </div>
-        </nav>
-    </header>
+    <header th:replace="~{fragments/header :: header}"></header>
 
     <main>
         <section class="intro">

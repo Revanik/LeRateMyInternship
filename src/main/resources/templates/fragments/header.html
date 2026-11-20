@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <!-- Shared top navigation. Use with: <header th:replace="~{fragments/header :: header}"></header> -->
+    <header class="site-header" th:fragment="header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="logo" th:href="@{/}">LeRateMyInternship</a>
+
+            <div class="nav-links">
+                <a th:href="@{/}">Home</a>
+                <a th:href="@{/reviews}">Reviews</a>
+                <a th:href="@{/#about}">About</a>
+
+                <th:block th:if="${currentUserEmail == null}">
+                    <a th:href="@{/login}">Log in</a>
+                    <a th:href="@{/register}">Sign up</a>
+                </th:block>
+
+                <th:block th:if="${currentUserEmail != null}">
+                    <a th:href="@{/account}">My account</a>
+                    <form class="logout-form" th:action="@{/logout}" method="post">
+                        <button type="submit" class="link-button">Log out</button>
+                    </form>
+                </th:block>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
