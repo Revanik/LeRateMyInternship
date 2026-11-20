@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Reviews')}"></head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="logo" th:href="@{/}">LeRateMyInternship</a>
+      <div class="nav-links">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/reviews}">Reviews</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Internship Reviews</h1>
+
+    <p>
+      <a class="review-link" th:href="@{/reviews/new}">Write a review</a>
+      <a class="review-link secondary" th:href="@{/}">Home</a>
+    </p>
+
+    <p th:if="${#lists.isEmpty(reviews)}">No reviews yet.</p>
+
+    <article class="review-card" th:each="r : ${reviews}">
+      <h2 th:text="${r.title}">Title</h2>
+      <p th:text="${r.companyName} + ' - ' + ${r.positionTitle}"></p>
+      <p th:text="'Rating: ' + ${r.overallRating} + ' / 5'"></p>
+      <p th:text="${r.body}"></p>
+    </article>
+  </main>
+</body>
+</html>

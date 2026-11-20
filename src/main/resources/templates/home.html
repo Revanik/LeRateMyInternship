@@ -9,6 +9,7 @@
 
             <div class="nav-links">
                 <a th:href="@{/}">Home</a>
+                <a th:href="@{/reviews}">Reviews</a>
                 <a href="#about">About</a>
             </div>
         </nav>
@@ -38,6 +39,9 @@
                     <button type="submit">Search</button>
                 </div>
             </form>
+            <p>
+                <a th:href="@{/reviews/new}">Write a review</a>
+            </p>
         </section>
 
         <section class="features" id="about">
