@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: internships
+      POSTGRES_USER: internships
+      POSTGRES_PASSWORD: internships
+    ports:
+      - "5433:5432"        # 5433 on your machine, so it doesn't clash with local Postgres
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U internships -d internships"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy   # wait until Postgres is ready
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/internships
+      DB_USER: internships
+      DB_PASSWORD: internships
+    ports:
+      - "8080:8080"
+
+volumes:
+  pgdata:
