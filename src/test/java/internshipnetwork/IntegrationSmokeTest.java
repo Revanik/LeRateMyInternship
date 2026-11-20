@@ -1,7 +1,6 @@
 package internshipnetwork;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,6 +37,6 @@ class IntegrationSmokeTest {
                 .toEntity(String.class);
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(response.getBody()).contains("<h1>Student Internship Network</h1>");
+        assertThat(response.getBody()).contains("Find Your Next Internship");
     }
 }
