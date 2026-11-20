@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Write a review')}"></head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="logo" th:href="@{/}">LeRateMyInternship</a>
+      <div class="nav-links">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/reviews}">Reviews</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Write a review</h1>
+
+    <form class="review-form" th:action="@{/reviews}" th:object="${review}" method="post">
+      <p>
+        <label>Company <input type="text" th:field="*{companyName}"></label>
+        <span class="field-error" th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}"></span>
+      </p>
+      <p>
+        <label>Position <input type="text" th:field="*{positionTitle}"></label>
+        <span class="field-error" th:if="${#fields.hasErrors('positionTitle')}" th:errors="*{positionTitle}"></span>
+      </p>
+      <p>
+        <label>Title <input type="text" th:field="*{title}"></label>
+        <span class="field-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+      </p>
+      <p>
+        <label>Rating
+          <select th:field="*{overallRating}">
+            <option value="">Choose...</option>
+            <option th:each="n : ${#numbers.sequence(1, 5)}" th:value="${n}" th:text="${n}"></option>
+          </select>
+        </label>
+        <span class="field-error" th:if="${#fields.hasErrors('overallRating')}" th:errors="*{overallRating}"></span>
+      </p>
+      <p>
+        <label>Review <textarea th:field="*{body}" rows="6"></textarea></label>
+        <span class="field-error" th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></span>
+      </p>
+
+      <button class="review-link" type="submit">Publish</button>
+      <a class="review-link secondary" th:href="@{/}">Home</a>
+    </form>
+  </main>
+</body>
+</html>
