@@ -1,2 +1,12 @@
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\AccountController.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\AccountService.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\AppUser.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\AppUserDetailsService.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\AppUserRepository.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\CurrentUserAdvice.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\EmailAlreadyRegisteredException.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\RegistrationForm.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\Role.java
+C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\account\SecurityConfig.java
 C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\common\HomeController.java
 C:\dev\LeRateMyInternship\src\main\java\internshipnetwork\InternshipNetworkApplication.java
