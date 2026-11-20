@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/layout :: head(${appName})}"></head>
+
 <body>
-  <main>
-    <h1 th:text="${appName}">Student Internship Network</h1>
-    <p>Skeleton is running. <span id="js-status">JavaScript not loaded.</span></p>
-  </main>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="logo" th:href="@{/}">LeRateMyInternship</a>
+
+            <div class="nav-links">
+                <a th:href="@{/}">Home</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Find Your Next Internship</h1>
+            <p>
+                Search internship opportunities, explore student
+                experiences, and make informed career decisions.
+            </p>
+
+            <form class="search-form"
+                  th:action="@{/internships/search}"
+                  method="get">
+                <label for="search-input">Search internships</label>
+
+                <div class="search-controls">
+                    <input
+                        type="search"
+                        id="search-input"
+                        name="q"
+                        placeholder="Search by company or internship title"
+                        required
+                    >
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="features" id="about">
+            <h2>Explore LeRateMyInternship</h2>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <h3>Find Internships</h3>
+                    <p>
+                        Discover internship postings that match
+                        your interests and career goals.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3>Read Student Reviews</h3>
+                    <p>
+                        Learn about internship experiences
+                        from other students.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>LeRateMyInternship</p>
+    </footer>
 </body>
 </html>
