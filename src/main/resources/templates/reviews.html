@@ -1,33 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/layout :: head('Reviews')}"></head>
-<body>
-  <header class="site-header">
-    <nav class="navbar" aria-label="Main navigation">
-      <a class="logo" th:href="@{/}">LeRateMyInternship</a>
-      <div class="nav-links">
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/reviews}">Reviews</a>
-      </div>
-    </nav>
-  </header>
+  <head th:replace="~{fragments/layout :: head('Reviews')}"></head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" th:href="@{/}">LeRateMyInternship</a>
+        <div class="nav-links">
+          <a th:href="@{/}">Home</a>
+          <a th:href="@{/reviews}">Reviews</a>
+        </div>
+      </nav>
+    </header>
 
-  <main class="page">
-    <h1>Internship Reviews</h1>
+    <main class="page">
+      <h1>Internship Reviews</h1>
 
-    <p>
-      <a class="review-link" th:href="@{/reviews/new}">Write a review</a>
-      <a class="review-link secondary" th:href="@{/}">Home</a>
-    </p>
+      <p>
+        <a class="review-link" th:href="@{/reviews/new}">Write a review</a>
+        <a class="review-link secondary" th:href="@{/}">Home</a>
+      </p>
 
-    <p th:if="${#lists.isEmpty(reviews)}">No reviews yet.</p>
+      <form class="review-search" th:action="@{/reviews}" method="get">
+        <label for="review-query">Search Reviews</label>
 
-    <article class="review-card" th:each="r : ${reviews}">
-      <h2 th:text="${r.title}">Title</h2>
-      <p th:text="${r.companyName} + ' - ' + ${r.positionTitle}"></p>
-      <p th:text="'Rating: ' + ${r.overallRating} + ' / 5'"></p>
-      <p th:text="${r.body}"></p>
-    </article>
-  </main>
-</body>
+        <div class="review-search-controls">
+          <input
+            type="search"
+            id="review-query"
+            name="q"
+            th:value="${q}"
+            placeholder="Search by company, position, or title"
+          />
+
+          <button class="review-link" type="submit">Search</button>
+
+          <a class="review-link secondary" th:href="@{/reviews}">
+            Clear Search
+          </a>
+        </div>
+      </form>
+
+      <p th:if="${#lists.isEmpty(reviews) and #strings.isEmpty(q)}">
+        No reviews yet.
+      </p>
+
+      <p th:if="${#lists.isEmpty(reviews) and not #strings.isEmpty(q)}">
+        No reviews matched your search.
+      </p>
+
+      <article class="review-card" th:each="r : ${reviews}">
+        <h2 th:text="${r.title}">Title</h2>
+
+        <p th:text="${r.companyName} + ' - ' + ${r.positionTitle}"></p>
+
+        <p
+          class="review-date"
+          th:text="${#temporals.format(r.createdAt, 'MMM d, yyyy')}"
+        >
+          Posting date
+        </p>
+
+        <p th:text="'Rating: ' + ${r.overallRating} + ' / 5'"></p>
+
+        <p th:text="${r.body}"></p>
+      </article>
+    </main>
+  </body>
 </html>
