@@ -81,3 +81,7 @@ The build is configured in pom.xml and run with the included Maven wrapper (mvnw
 
 Diagram:
 ![DeploymentDiagram](images\DeploymentDiagram.png)
+
+## GenAI disclosure
+
+GenAI was used in this project to assist with Code Generation, Automated Testing, and Documentation
