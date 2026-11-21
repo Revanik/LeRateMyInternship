@@ -13,6 +13,12 @@ In powershell run: docker compose up --build
 
 Open http://localhost:8080. Stop with Ctrl+C, then `docker compose down`
 
+## Features
+
+- **Create an account and log in.** Select **Sign up**, enter your email, and create and confirm a password of at least eight characters. Log in with those credentials to open **My account**.
+- **Write and rate an internship review.** Select **Write a review** from the homepage or the **Reviews** page. Enter the company, position, review title, and review text, choose an overall rating from 1 to 5, and select **Publish**. Your review appears on the **Reviews** page.
+- **Browse and search reviews.** Open **Reviews** to read published reviews, newest first. Enter a company, position, or review title in **Search Reviews** and select **Search**. Select **Clear Search** to see all reviews again.
+
 We plan to build our system using Java 25 and Spring Boot for the backend, Thymeleaf with HTML, CSS, and JavaScript for the frontend, and PostgreSQL for the database. One thing we are unsure about is how to verify that reviewers’ work email addresses are legitimate and confirm that they actually worked at the company they are reviewing.
 
 Software Needed
